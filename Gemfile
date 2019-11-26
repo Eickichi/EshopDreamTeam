@@ -72,3 +72,4 @@ gem 'devise'
 gem 'dotenv'
 
 gem 'stripe'
+
