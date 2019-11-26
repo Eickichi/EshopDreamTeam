@@ -70,3 +70,5 @@ gem 'rspec'
 gem 'devise'
 
 gem 'dotenv'
+
+gem 'stripe'
