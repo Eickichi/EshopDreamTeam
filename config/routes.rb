@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "items#index"
   resources :orders
   resources :carts
-  resources :products
+  resources :items
   resources :line_items
   devise_for :users
 
