@@ -18,6 +18,10 @@ puts "10 items crees"
 end
 puts "10 commandes crees"
 
+10.times do  |index|    #cree 10 events
+        Cart.create!(user: User.all.sample)
+end
+puts "10 paniers crees" 
 
 
 puts "all entries added"
