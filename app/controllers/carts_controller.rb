@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 
-  def index
+  def show
     @cart = @current_cart
   end
 
