@@ -1,8 +1,6 @@
 class CartsController < ApplicationController
 
-  include Cartshelper
-  
-  def show
+  def index
     @cart = @current_cart
   end
 
