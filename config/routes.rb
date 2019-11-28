@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'line_items/:id' => "line_items#show", as: "line_item"
   delete 'line_items/:id' => "line_items#destroy"
   get 'carts/:id' => "carts#show", as: "cart"
+  post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
   resources :orders
   #resources :carts
   resources :items
