@@ -32,11 +32,11 @@
                     <div class="product_count">
                     <label for="qty">Quantity:</label>
                         <input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-                        <a class="button btn-primary btn-log" href="#">Add to Cart</a>               
+                        <%= button_to "Add #{@item.name} to cart", line_items_path(:item_id => @item.id) %>              
                     </div>
                 </div>
             </div>
         </div>
-    </div
+    </div>
 </body>
 </html>

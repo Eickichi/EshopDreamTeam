@@ -1,2 +1,19 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<center><h2>Cart show</h2>
+
+<div>
+<ul>
+  <% @cart.line_items.each do |line_item| %>
+    <li>Item: <%= line_item.item.name %> </li>
+    <ul>
+      <li>
+        <%= link_to "Remove item", line_item_path(line_item), method: :delete %>
+      </li>
+    </ul>
+    
+  <% end %>
+</ul>
+
+
+regdthbgthfgh
+</div>
+</center>

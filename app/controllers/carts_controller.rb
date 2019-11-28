@@ -1,9 +1,8 @@
 class CartsController < ApplicationController
 
-  include Cartshelper
-  
   def show
     @cart = @current_cart
+    puts @current_cart
   end
 
   def destroy
