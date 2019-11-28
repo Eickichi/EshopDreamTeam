@@ -1,16 +1,20 @@
 class LineItemsController < ApplicationController
     
     def create
-        # Find associated item and current cart
         chosen_item = Item.find(params[:item_id])
         current_cart = @current_cart
       
           @line_item = LineItem.new
           @line_item.cart = current_cart
           @line_item.item = chosen_item
-          @line_item.save
+          if @line_item.save
         
         redirect_to cart_path(@current_cart)
+
+          else 
+
+          redirect_to items_path
+          end
       end
 
       def destroy
