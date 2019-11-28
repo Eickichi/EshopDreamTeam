@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   delete 'line_items/:id' => "line_items#destroy"
   get 'carts/:id' => "carts#show", as: "cart"
   resources :orders
-  resources :carts
+  #resources :carts
   resources :items
-  resources :line_items
+  #resources :line_items
   devise_for :users
 
   resources :users, only: [:show] do

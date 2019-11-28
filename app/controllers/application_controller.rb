@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
 
     before_action :configure_devise_parameters, if: :devise_controller?
-  
+    before_action :current_cart
+    
     def after_sign_in_path_for(resource_or_scope)
         root_path
     end
@@ -23,7 +24,7 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:account_update) {|u| u.permit(:first_name, :last_name, :user_name, :email, :password, :password_confirmation)}
       end
 
-      before_action :current_cart
+      
 
     private
       def current_cart
@@ -35,14 +36,11 @@ class ApplicationController < ActionController::Base
           else
             session[:cart_id] = nil
           end
-
-          puts @current_cart
         end
   
         if session[:cart_id] == nil
           @current_cart = Cart.create!
           session[:cart_id] = @current_cart.id
-          puts @current_cart
         end
       end
 end
