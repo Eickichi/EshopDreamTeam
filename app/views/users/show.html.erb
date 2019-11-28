@@ -3,6 +3,7 @@
 <p>Bienvenue sur la page d'ajout d'un avatar pour le User : <%= @user.first_name %>
 <br/><br/><br/>
 <p>Pour changer t'es infos clique ici :<%= link_to "Changer mes infos", edit_user_registration_path, class: "btn btn-primary"  %>
+<p>
 <h3>Avatar actuel</h3>
 <br/><br/><br/>
 <% if @user.avatar.attached? %>
@@ -11,8 +12,9 @@
   <p>=== Il n'y a pas encore d'avatar lié a cet utilisateur ===</p>
 <% end %>
 
-<%= form_tag do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "uploader l'avatar" %>
-<% end %>
 
+<h3>Changer d'avatar ?</h3>
+<%= form_tag user_avatars_path(@user), multipart: true do %>
+  <%= file_field_tag :avatar %>
+  <%= submit_tag "mettre à jour" %>
+<% end %>

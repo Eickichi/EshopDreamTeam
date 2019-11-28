@@ -19,12 +19,6 @@
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
-      
-      <li class="nav-item">
-        <% if user_signed_in?%>
-          <%= link_to "Profil", user_path(current_user)%>
-        <% end %>
-      </li>
     </ul>
  <ul class= "nav navbar-nav navbar-right">
               <% if current_user == nil %>
