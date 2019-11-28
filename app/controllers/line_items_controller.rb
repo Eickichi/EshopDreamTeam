@@ -1,15 +1,20 @@
 class LineItemsController < ApplicationController
     
     def create
-        # Find associated item and current cart
         chosen_item = Item.find(params[:item_id])
         current_cart = @current_cart
       
           @line_item = LineItem.new
           @line_item.cart = current_cart
           @line_item.item = chosen_item
+          if @line_item.save
         
         redirect_to cart_path(@current_cart)
+
+          else 
+
+          redirect_to items_path
+          end
       end
 
       def destroy
@@ -39,8 +44,5 @@ class LineItemsController < ApplicationController
           params.require(:line_item).permit(:quantity,:item_id, :cart_id)
         end
 
-         def total_price
-    self.quantity * self.product.price
-        end
 
 end
