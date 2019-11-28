@@ -17,31 +17,24 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user=User.find(params[:id])
   end
 
   def create
     @user = User.new(user_params)
-
       if @user.save
         redirect_to @user, notice: 'User was successfully created.'
-        
       else
-        render :new 
-        
+        render :new   
       end
-    
   end
 
-
   def update
-    
-      if @user.update(user_params)
-       redirect_to @user, notice: 'User was successfully updated.'
-      else
-       render :edit 
-        
-      end
-    
+    if @user.update(user_params)
+     redirect_to @user, notice: 'User was successfully updated.'
+    else
+     render :edit 
+    end
   end
 
   def destroy
