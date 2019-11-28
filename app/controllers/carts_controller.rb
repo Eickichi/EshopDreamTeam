@@ -2,7 +2,6 @@ class CartsController < ApplicationController
 
   def show
     @cart = @current_cart
-    puts @current_cart
   end
 
   def destroy
@@ -10,6 +9,10 @@ class CartsController < ApplicationController
     @cart.destroy
     session[:cart_id] = nil
     redirect_to root_path
+  end
+
+  def total_price
+    self.quantity * self.item.price
   end
 
 end
