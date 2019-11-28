@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body class = "avat">
 <h1>La page profil</h1>
 
 <p>Bienvenue sur la page d'ajout d'un avatar pour le User : <%= @user.first_name %>
@@ -7,7 +13,7 @@
 <h3>Avatar actuel</h3>
 <br/><br/><br/>
 <% if @user.avatar.attached? %>
-  <%= image_tag @user.avatar, alt: 'avatar' %>
+  <%= image_tag @user.avatar, alt: 'avatar', class: "avatar-size" %>
 <% else %>
   <p>=== Il n'y a pas encore d'avatar lié a cet utilisateur ===</p>
 <% end %>
@@ -18,3 +24,5 @@
   <%= file_field_tag :avatar %>
   <%= submit_tag "mettre à jour" %>
 <% end %>
+</body>
+</html>

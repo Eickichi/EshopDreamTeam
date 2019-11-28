@@ -25,10 +25,21 @@ body {
   color: #888;
   text-align: left;
   background-color: #fff;
-  background-image: 
   padding-bottom: 300px;
 }
-
+.signbod {
+  position: relative;
+padding-bottom: 300px;
+}
+.avatar-size {
+  max-width: 80px;
+  max-height: 80px;
+}
+}
+.avat {
+  position: relative;
+padding-bottom: 300px;
+}
 .index { 
 position: relative;
 padding-bottom: 300px;
