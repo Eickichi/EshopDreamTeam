@@ -8,6 +8,7 @@ class LineItemsController < ApplicationController
           @line_item = LineItem.new
           @line_item.cart = current_cart
           @line_item.item = chosen_item
+          @line_item.save
         
         redirect_to cart_path(@current_cart)
       end
@@ -39,8 +40,5 @@ class LineItemsController < ApplicationController
           params.require(:line_item).permit(:quantity,:item_id, :cart_id)
         end
 
-         def total_price
-    self.quantity * self.product.price
-        end
 
 end
